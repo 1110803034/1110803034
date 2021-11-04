@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DIV排版</title>
+	<style>
+		.container{
+			width: 800px;
+			height: 600px;
+			margin: 0 auto;
+			background: white;
+		}
+		header{
+			height: 25%;
+			background: orange;
+		}
+		nav{
+			margin-top: 5px;
+			background: deeppink;
+
+		}
+		.aside{
+			margin-top: 5px;
+			margin-bottom: 5px;
+			width:30%;
+			height:50%;
+			background:  pink;
+			float: left;
+		}
+		.article{
+			margin-left: 3px;
+			margin-top: 5px;
+			float: right;
+			height:50%;
+			width: 69%;
+			background:  deepskyblue;
+		}
+		footer{
+			margin-top: 3px;
+			height:25%;
+			background:  darkseagreen;
+			clear: both;
+		}
+		.section{
+			position:relative;
+			background: yellow;
+			width:95%;
+			height: 30%;
+			top: 160px;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+	<center><a href="index.html">回首頁</a></center>
+	<div class="container">
+		<header>header</header>
+		<nav>nav</nav>
+		<div class="aside">aside</div>
+		<div class="article">article <div class="section">section</div></div>
+		<footer>footer</footer>
+	</div>
+</body>
+</html>
