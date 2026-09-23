@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="超級市場 2021-2024 銷售、利潤與退貨資料視覺化分析報告">
+  <title>超級市場｜營運分析報告</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark">MS</span>
+        <div>
+          <p class="eyebrow">MARKET INTELLIGENCE / 2021—2024</p>
+          <h1>超級市場營運分析</h1>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="status-dot"></span>
+        <span>資料更新至 2024.12.31</span>
+        <button class="icon-button" id="printReport" type="button" aria-label="列印報告" title="列印報告">↗</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-copy">
+          <p class="section-kicker">EXECUTIVE OVERVIEW</p>
+          <h2>銷售持續增長，<br><em>利潤需要更精準的管理。</em></h2>
+          <p class="hero-note">這份報告將 10,933 筆訂單轉換成可執行的營運訊號，聚焦成長動能、區域效率與虧損風險。</p>
+        </div>
+        <div class="hero-signal">
+          <div class="signal-label">整體利潤率</div>
+          <div class="signal-value">12.1<span>%</span></div>
+          <div class="signal-track"><span style="width: 60.5%"></span></div>
+          <div class="signal-foot"><span>目標 20%</span><span>差距 7.9pt</span></div>
+        </div>
+      </section>
+
+      <section class="metric-grid" aria-label="關鍵指標">
+        <article class="metric-card accent-coral">
+          <div class="metric-top"><span>總銷售額</span><span class="metric-icon">↗</span></div>
+          <strong>3,566,440</strong><small>元</small>
+          <div class="metric-bottom"><span class="trend up">＋14.4%</span><span>較 2023</span></div>
+        </article>
+        <article class="metric-card accent-lime">
+          <div class="metric-top"><span>總利潤</span><span class="metric-icon">◆</span></div>
+          <strong>432,054</strong><small>元</small>
+          <div class="metric-bottom"><span class="trend up">＋14.3%</span><span>較 2023</span></div>
+        </article>
+        <article class="metric-card accent-blue">
+          <div class="metric-top"><span>訂單數</span><span class="metric-icon">#</span></div>
+          <strong>5,397</strong><small>張</small>
+          <div class="metric-bottom"><span class="trend up">＋10.9%</span><span>平均客單 661 元</span></div>
+        </article>
+        <article class="metric-card accent-yellow">
+          <div class="metric-top"><span>退貨訂單率</span><span class="metric-icon">↶</span></div>
+          <strong>5.5</strong><small>%</small>
+          <div class="metric-bottom"><span class="trend warn">需留意</span><span>296 張退貨訂單</span></div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel panel-wide">
+          <div class="panel-heading">
+            <div><p class="section-kicker">GROWTH TRAJECTORY</p><h3>年度銷售與利潤</h3></div>
+            <div class="chart-controls"><label for="monthFilter">月份</label><select id="monthFilter" aria-label="篩選月份"><option value="all">全年</option><option value="1">1 月</option><option value="2">2 月</option><option value="3">3 月</option><option value="4">4 月</option><option value="5">5 月</option><option value="6">6 月</option><option value="7">7 月</option><option value="8">8 月</option><option value="9">9 月</option><option value="10">10 月</option><option value="11">11 月</option><option value="12">12 月</option></select><div class="legend"><span><i class="legend-dot coral"></i>銷售額</span><span><i class="legend-dot blue"></i>利潤</span></div></div>
+          </div>
+          <div class="chart-wrap line-chart-wrap">
+            <div class="axis-labels"><span>1.2M</span><span>900K</span><span>600K</span><span>300K</span><span>0</span></div>
+            <div class="line-chart" id="yearChart" aria-label="年度銷售與利潤圖表"></div>
+          </div>
+          <div class="chart-caption"><span>四年銷售額成長 <b>87.2%</b></span><span>2024 年為最高峰</span></div>
+        </article>
+
+        <article class="panel region-panel">
+          <div class="panel-heading"><div><p class="section-kicker">REGIONAL EFFICIENCY</p><h3>區域表現</h3></div><span class="tiny-note">銷售占比 / 利潤率</span></div>
+          <div class="region-pie-area"><div class="region-pie" id="regionPie" role="img" aria-label="各區域銷售占比圖"></div><div class="region-pie-legend" id="regionPieLegend"></div></div>
+          <div class="region-list" id="regionList"></div>
+          <div class="callout"><span class="callout-mark">!</span><p><strong>東南亞是首要改善區。</strong><br>銷售占比 24.8%，但利潤率僅 2.0%。</p></div>
+        </article>
+
+        <article class="panel category-panel">
+          <div class="panel-heading"><div><p class="section-kicker">MIX & MARGIN</p><h3>產品類別組合</h3></div><div class="select-wrap"><select id="categoryMetric" aria-label="類別指標"><option value="sales">銷售額</option><option value="profit">利潤</option></select></div></div>
+          <div class="category-chart" id="categoryChart"></div>
+          <div class="category-note"><span class="category-pip coral"></span><span>技術類帶來最高利潤，利潤率 15.0%</span></div>
+        </article>
+
+        <article class="panel insight-panel">
+          <div class="panel-heading"><div><p class="section-kicker">RISK RADAR</p><h3>獲利風險訊號</h3></div><span class="risk-badge">3 項優先</span></div>
+          <div class="risk-list">
+            <div class="risk-row"><span class="risk-number">01</span><div><strong>桌子子類別</strong><p>銷售 225,099 元，利潤 <b class="negative">-20,129 元</b></p></div><span class="risk-arrow">→</span></div>
+            <div class="risk-row"><span class="risk-number">02</span><div><strong>東南亞區域</strong><p>3,127 筆明細，利潤率僅 <b class="negative">2.0%</b></p></div><span class="risk-arrow">→</span></div>
+            <div class="risk-row"><span class="risk-number">03</span><div><strong>負利潤明細</strong><p>共有 3,219 筆，占全部明細 <b class="negative">29.4%</b></p></div><span class="risk-arrow">→</span></div>
+          </div>
+        </article>
+
+        <article class="panel insight-panel recommendations">
+          <div class="panel-heading"><div><p class="section-kicker">NEXT MOVES</p><h3>管理建議</h3></div><span class="tiny-note">依資料優先級</span></div>
+          <ol class="recommendation-list">
+            <li><span>01</span><p><strong>重算桌子類別的價格與折扣底線</strong><br>先處理負利潤最高的產品群。</p></li>
+            <li><span>02</span><p><strong>拆解東南亞的運費與退貨成本</strong><br>維持銷售量，同時修復邊際。</p></li>
+            <li><span>03</span><p><strong>放大技術類與北亞市場</strong><br>複製器、電話具備較佳獲利效率。</p></li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer"><span>資料來源：超級市場.xlsx</span><span>ANALYTICS / INTERNAL USE</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
